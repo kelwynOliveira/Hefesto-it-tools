@@ -4,10 +4,13 @@ FROM node:lts-alpine AS build-stage
 ENV NPM_CONFIG_LOGLEVEL warn
 ENV CI true
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN npm install -g pnpm && pnpm i --frozen-lockfile
+# COPY package.json pnpm-lock.yaml ./
+COPY package.json package-lock.json ./
+# RUN npm install -g pnpm && pnpm i --frozen-lockfile
+RUN npm ci
 COPY . .
-RUN pnpm build
+# RUN pnpm build
+RUN npm run build
 
 # production stage
 FROM nginx:stable-alpine AS production-stage
