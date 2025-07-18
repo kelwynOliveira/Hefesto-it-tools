@@ -392,3 +392,7 @@ tools:
   text-to-binary:
     title: Texto para binário ASCII
     description: Converte texto para sua representação binária ASCII e vice-versa.
+
+  json-to-go:
+    title: JSON para Go
+    description: Analisa e converte JSON para Go structure.
