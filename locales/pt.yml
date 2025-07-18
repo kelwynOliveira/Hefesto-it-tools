@@ -198,7 +198,7 @@ tools:
     description: Uma calculadora para avaliar expressões matemáticas. Você pode usar funções como sqrt, cos, sin, abs, etc.
 
   json-to-yaml-converter:
-    title: Conversor de JSON para YAML
+    title: JSON para YAML
     description: Simples conversor JSON para YAML com este conversor online ao vivo.
 
   url-parser:
@@ -396,3 +396,7 @@ tools:
   json-to-go:
     title: JSON para Go
     description: Analisa e converte JSON para Go structure.
+
+  json-to-zod:
+    title: JSON para Zod
+    description: Analisa e converte JSON para Zod.

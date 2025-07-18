@@ -2,10 +2,11 @@
 import _ from 'lodash';
 import type { UseValidationRule } from '@/composable/validation';
 import CInputText from '@/ui/c-input-text/c-input-text.vue';
+import { ref, watch, watchEffect, toRefs } from 'vue';
 
 const props = withDefaults(
   defineProps<{
-    transformer?: (v: string) => string
+    transformer?: (v: string) => string | Promise<string>
     inputValidationRules?: UseValidationRule<string>[]
     inputLabel?: string
     inputPlaceholder?: string
@@ -30,7 +31,21 @@ const { transformer, inputValidationRules, inputLabel, outputLabel, outputLangua
 const inputElement = ref<typeof CInputText>();
 
 const input = ref(inputDefault.value);
-const output = computed(() => transformer.value(input.value));
+// const output = computed(() => transformer.value(input.value));
+const output = ref('');
+const isTransforming = ref(false);
+
+watchEffect(async () => {
+  isTransforming.value = true;
+  try {
+    output.value = await transformer.value(input.value);
+  } catch (e) {
+    console.error("Erro na transformação:", e);
+    output.value = 'Erro na transformação.';
+  } finally {
+    isTransforming.value = false;
+  }
+});
 </script>
 
 <template>

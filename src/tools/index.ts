@@ -88,6 +88,7 @@ import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
 import { tool as jsonToGo } from './json-to-go';
+import { tool as jsonToZod } from './json-to-zod';
 
 export const toolsByCategory: ToolCategory[] = [
   {
@@ -121,9 +122,10 @@ export const toolsByCategory: ToolCategory[] = [
       textToUnicode,
       yamlToJson,
       yamlToToml,
+      jsonToGo,
       jsonToYaml,
       jsonToToml,
-      jsonToGo,
+      jsonToZod,
       listConverter,
       tomlToJson,
       tomlToYaml,

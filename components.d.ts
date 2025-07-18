@@ -123,6 +123,7 @@ declare module 'vue' {
     JsonToToml: typeof import('./src/tools/json-to-toml/json-to-toml.vue')['default']
     JsonToXml: typeof import('./src/tools/json-to-xml/json-to-xml.vue')['default']
     JsonToYaml: typeof import('./src/tools/json-to-yaml-converter/json-to-yaml.vue')['default']
+    JsonToZod: typeof import('./src/tools/json-to-zod/json-to-zod.vue')['default']
     JsonViewer: typeof import('./src/tools/json-viewer/json-viewer.vue')['default']
     JwtParser: typeof import('./src/tools/jwt-parser/jwt-parser.vue')['default']
     KeycodeInfo: typeof import('./src/tools/keycode-info/keycode-info.vue')['default']

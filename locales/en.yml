@@ -396,3 +396,7 @@ tools:
   json-to-go:
     title: JSON to Go
     description: Parse and convert JSON to Go Struct.
+
+  json-to-zod:
+    title: JSON to Zod
+    description: Parse and convert JSON to Zod.
